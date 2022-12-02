@@ -1,13 +1,19 @@
-
+import styled  from 'styled-components';
+import Button from '@mui/material/Button';
+import domtoimage from 'dom-to-image';
+import { saveAs } from 'file-saver';
 
 const SaveButton = () =>{
-
     return (
-        <>
-            <button>저장하기</button>
-        </>
-    )
-
+        <ButtonContiner>
+            <Button variant="contained" color="success" >
+                저장하기
+            </Button>
+        </ButtonContiner>
+    );
 }
 
-export default SaveButton;
+const ButtonContiner = styled.div`
+    margin: 40px auto;
+`
+;export default SaveButton;
