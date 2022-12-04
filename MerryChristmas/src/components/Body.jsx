@@ -1,16 +1,19 @@
 import styled  from 'styled-components';
-import { useRef , useState } from "react";
-import Button from '@mui/material/Button';
-// import SaveButton from './SaveButton.jsx';
+import { useRef , useState , createContext } from "react";
+
 import domtoimage from 'dom-to-image';
 import { saveAs } from 'file-saver';
+
+import SaveButton from "./SaveButton.jsx"
+import ColorSelector from './ColorSelector.jsx'
+
+export const AppContext = createContext();
 
 const UploadButton = () =>{
     const selectFile = useRef("");
     const imgRef = useRef();
     const [imageSrc, setImageSrc] = useState(null);
-    const [frame , setFrame] = useState("./Frame1.jpg");
-
+    const [frame , setFrame] = useState('/images/red.png');
 
     const onUploadImage = (file) => {
         const reader = new FileReader();
@@ -49,13 +52,13 @@ const UploadButton = () =>{
         
         {/* public 경로 */}
         <div ref={imgRef} >
-            <Img src={process.env.PUBLIC_URL + '/images/frameImg-removebg-preview.png'} 
-                    style={{backgroundImage : `url(${imageSrc})`, backgroundPosition:'center', backgroundRepeat:'no-repeat', backgroundSize: "contain", }} alt='frame' >
+            <Img src={process.env.PUBLIC_URL + frame} 
+                    style={{backgroundImage : `url(${imageSrc})`, backgroundPosition:'center', backgroundRepeat:'no-repeat', backgroundSize: "contain", padding: "10px" }} alt='frame' >
             </Img>
         </div>
-        {imageSrc && <Button variant="contained" color="success" onClick={onDownload}>
-                저장하기
-            </Button>}
+        <ColorSelector></ColorSelector>
+
+        {imageSrc && <SaveButton onClick={onDownload} />}
         </>
     );
 
