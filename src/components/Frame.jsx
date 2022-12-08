@@ -14,9 +14,19 @@ export default function Frame({imageSrc}) {
 
     const onDownload = () => {
         const downloadImg = imgRef.current;
+        const scale = 2;
         console.log(downloadImg);
         domtoimage
-            .toBlob(downloadImg)
+            .toBlob(downloadImg,{
+                width: downloadImg.clientWidth * scale,
+                height: downloadImg.clientHeight * scale,
+                style: {
+                    transform: "scale(" + scale + ")",
+                    transformOrigin: "top left",
+                    width: downloadImg.offsetWidth + "px",
+                    height: downloadImg.offsetHeight + "px"
+                },
+            })
             .then((blob) => {
                 saveAs(blob, 'polaroid.png');
             });
