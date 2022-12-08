@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css"
 import styled from "styled-components";
 import Polaroid from "./components/Polaroid.jsx"
-import Body from './components/Body.jsx';
 
 const Container = styled.div`
   display: flex;

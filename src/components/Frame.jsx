@@ -36,7 +36,7 @@ const Img = styled.img `
     height: 400px;
     width: 300px;
     background-image : url(${props => props.imageSrc});
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 `;
