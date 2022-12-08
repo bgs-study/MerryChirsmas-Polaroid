@@ -1,24 +1,23 @@
 import React from "react";
 import "./App.css"
 import styled from "styled-components";
-import Header from "./components/Header.jsx"
+import Polaroid from "./components/Polaroid.jsx"
 import Body from './components/Body.jsx';
-import { createGlobalStyle } from "styled-components";
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <Container>
-        <Header></Header>
-        <Body></Body>
-      </Container>
-    </div>
+    <Container>
+      <Polaroid/>
+    </Container>
   );
 }
-
-const Container = styled.div`
-
-`;
 
 export default App;

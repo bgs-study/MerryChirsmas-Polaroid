@@ -7,5 +7,6 @@ const GlobalFont = createGlobalStyle`
     }
 
     body {font-family: bitbit;}
+    button{font-family: bitbit;}
 `
 export default GlobalFont;

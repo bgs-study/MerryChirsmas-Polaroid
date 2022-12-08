@@ -1,12 +1,13 @@
 import styled  from 'styled-components';
+import { useDispatch } from "react-redux";
+import {green,red} from "./Body";
 
-const ColorSelector = (props) =>{
-    //상태관리를 가져와서 사용 할 수 없을까?
-    console.log(props.setFrame)
+const ColorSelector = () =>{
+    const dispatch = useDispatch();
     return <>
         <ComponentContainer>
-            <Red  color = "red"> </Red>
-            <Green color="green" ></Green>
+            <Red name="red" onClick={() => dispatch(red())}></Red>
+            <Green name="green" onClick={()=>dispatch(green())}></Green>
         </ComponentContainer>
     </>
 }
@@ -30,7 +31,6 @@ const ComponentContainer = styled.div`
     display: flex;
     align-items: center; 
     justify-content: center;
-    
-    
 `;
+
 export default ColorSelector;
