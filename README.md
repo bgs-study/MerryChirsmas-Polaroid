@@ -1,6 +1,6 @@
 # MerryChirsmas-Polaroid
 
-URL : [merry-chirstmas-polaroid](merry-chirstmas-polaroid-d3wp7vlwj-bgs-study.vercel.app)
+URL : https://merry-chirstmas-polaroid.vercel.app
 
 크리스마스 테마의 폴라로이드 프레임을 씌운 이미지를 저장하는 서비스
 
